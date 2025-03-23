@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏢 Job Finder App
 
 ## 📌 Project Description
@@ -22,3 +23,6 @@ The **Job Finder App** is a web application that helps users search for jobs bas
    ```bash
    git clone https://github.com/onumaeleanyagift/alx-capstone-project
    cd alx-capstone-project
+=======
+# alx-capstone-project
+>>>>>>> 1ecb71590e8036255ae5ca865bb5da730d758c5a
