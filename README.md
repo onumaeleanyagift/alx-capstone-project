@@ -22,3 +22,4 @@ The **Job Finder App** is a web application that helps users search for jobs bas
    ```bash
    git clone https://github.com/onumaeleanyagift/alx-capstone-project
    cd alx-capstone-project
+
