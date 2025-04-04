@@ -1,24 +1,12 @@
-# 🏢 Job Finder App
+# React + Vite
 
-## 📌 Project Description
-The **Job Finder App** is a web application that helps users search for jobs based on keywords, location, job type, and salary. It fetches real-time job listings from the **Adzuna API** and provides an intuitive interface for job seekers.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🚀 Features
-- 🔍 **Search for Jobs** by keyword (e.g., "Frontend Developer")
-- 🎯 **Filter Jobs** by location, job type, and salary
-- 📄 **View Job Details** with full descriptions and apply links
-- ⭐ **Save Favorite Jobs** for later (using Local Storage/Firebase)
-- 📱 **Responsive Design** using Tailwind CSS
-- ⚡ **Fast Performance** with React + Vite
+Currently, two official plugins are available:
 
-## 🛠️ Tech Stack
-- **Frontend:** React (Vite), Tailwind CSS
-- **API:** Adzuna API
-- **State Management:** React Hooks (useState, useEffect)
-- **Deployment:** Netlify / Vercel
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🔧 Installation & Setup
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/onumaeleanyagift/alx-capstone-project
-   cd alx-capstone-project
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
