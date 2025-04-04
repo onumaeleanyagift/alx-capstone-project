@@ -5,19 +5,23 @@ const WelcomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="relative w-3/4 md:w-1/2 lg:w-1/3">
-        <div className="bgImage">
-          <img src="./src/assets/bg1.png" alt="Job Search" />
+    <div className=" h-screen bg-gray-100">
+    
+        <img
+          src="./src/assets/bg1.png"
+          alt="Job Search"
+          className="absolute h-screen w-screen object-cover z-1"
+        />
+        <div className="flex flex-row justify-center items-end h-screen">
           <button
             onClick={() => navigate("/SignUp")}
-            className="bg-white text-black px-4 py-2 rounded-lg shadow-lg hover:bg-gray-200 transition"
+            className="relative bg-white text-black px-4 py-2 rounded-lg shadow-lg bottom-[2%] z-10 hover:bg-gray-200 transition"
           >
             Get Started
           </button>
         </div>
       </div>
-    </div>
+    
   );
 };
 
