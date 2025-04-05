@@ -3,43 +3,56 @@ import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
-  const [warning, setWarning] = useState("");
   const [password, setPassword] = useState("");
+  const [warning, setWarning] = useState("");
+
   const navigate = useNavigate();
 
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
   const handleSignIn = () => {
+    setWarning("");
+
     if (!email.trim() || !password.trim()) {
-      alert("Please fill in all fields.");
+      setWarning("Please fill in all fields.");
       return;
     }
 
     if (!emailPattern.test(email)) {
       setWarning("Please enter a valid email address.");
       return;
-    } else {
-      setWarning("");
     }
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const user = users.find((user) => user.email === email);
 
     if (!user) {
-        alert("User does not exist. Please sign up.");
-        navigate("/SignUp")
+      setWarning("User does not exist. Please sign up.");
+      return;
     } else if (user.password !== password) {
-      alert("Incorrect password.");
+      setWarning("Incorrect password.");
+      return;
     } else {
-      alert("Login successful!");
-      navigate("/Home"); 
+      setWarning("Login successful!");
+      navigate("/Home");
     }
   };
 
   return (
     <div className="bg-white h-screen w-screen">
       <div className="lg:px-[30vw] md:px-[10vw] px-[5vw] py-40">
-        {warning && <span className="text-red-600">{warning}</span>}
+        {warning && (
+          <span
+            className={`block mb-4 ${
+              warning === "Login successful!"
+                ? "text-green-600"
+                : "text-red-600"
+            }`}
+          >
+            {warning}
+          </span>
+        )}
+
         <input
           type="email"
           placeholder="Enter your Email"
