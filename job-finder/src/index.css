@@ -62,3 +62,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+div.category {
+    @apply lg:grid grid-cols-2 max-w-7xl
+  }
+
+div.fillProfile {
+  @apply lg:w-[50vw] md:w-[80vw]
+}
+
