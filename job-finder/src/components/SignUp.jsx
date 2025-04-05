@@ -30,12 +30,13 @@ const SignUp = () => {
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
     if (users.some((user) => user.email === email)) {
-      alert("Email already exists.");
+      alert("Email already exists. Please sign in.");
+      navigate("/SignIn")
     } else {
       users.push({ email, password });
       localStorage.setItem("users", JSON.stringify(users));
-      alert("Account created! Please log in.");
-      navigate("./SignIn");
+      alert("Account created!");
+      navigate("/jobCategory");
     }
   };
 
