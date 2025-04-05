@@ -11,31 +11,31 @@ const SignUp = () => {
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
   const handleSignUp = () => {
+    setWarning("");
+
     if (!email.trim() || !password.trim() || !confirmPassword.trim()) {
-      alert("Please fill in all fields.");
+      setWarning("Please fill in all fields.");
       return;
     }
 
     if (!emailPattern.test(email)) {
-        setWarning("Please enter a valid email address.");
-        return;
-    } else {
-        setWarning("");
+      setWarning("Please enter a valid email address.");
+      return;
     }
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match.");
+      setWarning("Passwords do not match.");
       return;
     }
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
     if (users.some((user) => user.email === email)) {
-      alert("Email already exists. Please sign in.");
-      navigate("/SignIn")
+      setWarning("Email already exists. Please sign in.");
+      return;
     } else {
       users.push({ email, password });
       localStorage.setItem("users", JSON.stringify(users));
-      alert("Account created!");
+      setWarning("Account created!");
       navigate("/jobCategory");
     }
   };
@@ -44,10 +44,15 @@ const SignUp = () => {
     <div className="bg-white h-screen w-screen">
       <div className="lg:px-[30vw] md:px-[10vw] px-[5vw] py-40">
         {warning && (
-          <span className="text-red-600">
-            Please enter a valid email address
+          <span
+            className={`block mb-4 ${
+              warning === "Account created!" ? "text-green-600" : "text-red-600"
+            }`}
+          >
+            {warning}
           </span>
         )}
+
         <input
           type="email"
           placeholder="Enter your Email"
