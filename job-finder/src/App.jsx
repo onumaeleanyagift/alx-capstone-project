@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  useLocation, useNavigate
+  useLocation,
+  useNavigate,
 } from "react-router-dom";
 import "./index.css";
 import WelcomePage from "./pages/WelcomePage";
@@ -16,10 +17,9 @@ import JobDetails from "./components/JobDetails";
 import Apply from "./pages/Apply";
 import Profile from "./pages/Profile";
 
-
 function TopNav() {
   const location = useLocation();
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const showNavFrom = ["/Profile", "/Home", "/Job", "/apply"];
   const shouldShowNav = showNavFrom.some((path) =>
     location.pathname.startsWith(path)
