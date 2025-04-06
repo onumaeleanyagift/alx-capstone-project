@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useProfileStore from "../stores/useProfileStore";
 
 const FillProfile = () => {
   const navigate = useNavigate();
+  const setProfile = useProfileStore((state) => state.setProfile);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -34,6 +36,12 @@ const FillProfile = () => {
     const allFieldsFilled = Object.values(formData).every(
       (value) => value !== "" && value !== null
     );
+
+    setProfile({
+      name: formData.name,
+      role: "Frontend Developer",
+      image: URL.createObjectURL(formData.photo),
+    });
 
     if (!allFieldsFilled) {
       setWarning("Please fill out all fields before saving.");
