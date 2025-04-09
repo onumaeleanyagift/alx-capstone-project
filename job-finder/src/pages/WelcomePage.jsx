@@ -7,7 +7,7 @@ const WelcomePage = () => {
   return (
     <div className=" h-screen bg-gray-100">
       <img
-        src="./src/assets/bg1.png"
+        src="./bg1.png"
         alt="Job Search"
         className="absolute h-screen w-screen object-cover z-1"
       />
