@@ -14,7 +14,7 @@ const Home = () => {
   
   const fetchJobs = (query = "javascript developer") => {
     fetch(
-      `http://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=${app_id}&app_key=${app_key}&results_per_page=20&what=${query}&content-type=application/json`
+      `https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=${app_id}&app_key=${app_key}&results_per_page=20&what=${query}&content-type=application/json`
     )
       .then((res) => res.json())
       .then((data) => setJobs(data.results))
