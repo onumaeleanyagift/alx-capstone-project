@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/alx-capstone-project",
+  base: process.env.VITE_BASE_PATH || "/alx-capstone-project/tree/main/job-finder",
 });
